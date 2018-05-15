@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.railway_services.indian.railway.RailwayActivity">
+
+    <Button
+        android:id="@+id/pnrBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="take me to pnr activity" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <android.support.v7.widget.RecyclerView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/recyclerView"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" />
+    </android.support.design.widget.CoordinatorLayout>
+
+</RelativeLayout>

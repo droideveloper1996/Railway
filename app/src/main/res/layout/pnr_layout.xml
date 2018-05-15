@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252525"
+    android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fadingEdgeLength="5dp"
+        app:cardBackgroundColor="#252525"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:background="@drawable/ticket_2"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/train_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#e6f5f5f5"
+                android:textStyle="bold"
+                tools:text="POORVA EXPRESS" />
+
+            <TextView
+                android:id="@+id/train_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/train_name"
+                android:textColor="#e6f5f5f5"
+                android:textStyle="bold"
+                tools:text="(12381)" />
+
+            <TextView
+                android:id="@+id/pnr_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_toRightOf="@id/train_number"
+                android:gravity="right"
+                android:textColor="#e6f5f5f5"
+                android:textStyle="bold"
+                tools:text="6111545818" />
+
+            <TextView
+                android:id="@+id/departure_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/train_name"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="32dp"
+                android:text="00:10" />
+
+            <TextView
+                android:id="@+id/arrival_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/train_name"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="32dp"
+                android:text="06:05" />
+
+            <TextView
+                android:id="@+id/source_station_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/train_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="50dp"
+                android:text="CNB"
+                android:textColor="#252526"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/destination_station_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/train_name"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="50dp"
+                android:text="NDLS"
+                android:textColor="#252526"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/train_name"
+                android:layout_marginTop="54dp"
+                android:layout_toLeftOf="@id/destination_station_code"
+                android:layout_toRightOf="@id/source_station_code"
+                android:adjustViewBounds="true"
+                android:foregroundGravity="bottom"
+                android:src="@drawable/rightarrow" />
+
+            <TextView
+                android:id="@+id/source_station_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/source_station_code"
+                android:layout_marginTop="2dp"
+                android:text="KANPUR CENTRAL" />
+
+            <TextView
+                android:id="@+id/destination_station_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/source_station_code"
+                android:layout_marginTop="2dp"
+                android:text="HAZRAT NIZAMUDDIN" />
+
+            <TextView
+                android:id="@+id/date_of_journey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/source_station_name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:textColor="#df0c36"
+                android:text="05-04-2018" />
+
+            <TextView
+                android:id="@+id/boarding_station"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/source_station_name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:textColor="#dc1425"
+                android:layout_marginTop="4dp"
+                android:text="Jhansi(JN)" />
+
+            <TextView
+                android:id="@+id/class_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/source_station_name"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_toLeftOf="@id/boarding_station"
+                android:layout_toRightOf="@id/date_of_journey"
+                android:gravity="center_horizontal"
+                android:text="SL"
+                android:textColor="#DC143C" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

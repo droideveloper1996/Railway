@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    tools:context="com.railway_services.indian.railway.MainActivity">
+
+
+    <Button
+        android:id="@+id/create_new_accunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_bf"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textSize="13.5sp"
+        android:text="Create new Account"
+        android:textAllCaps="false"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/create_new_accunt"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_bf"
+        android:text="Sign in "
+        android:textSize="13.5sp"
+        android:textAllCaps="false"
+        android:textColor="#fffefe" />
+
+
+</RelativeLayout>

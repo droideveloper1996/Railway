@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="colorAlpha">#e80e54</color>
+    <color name="colorGamma">#313641</color>
+    <color name="colorBeta">#272b34</color>
+
+
+    <color name="availableColor">#f0359103</color>
+    <color name="greenStatus">#008000</color>
+
+    008000
+</resources>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f7292929">
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:fadingEdgeLength="5dp"
+        app:cardBackgroundColor="#312929"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/ticket_3">
+
+            <TextView
+                android:id="@+id/train_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="16dp"
+                android:textColor="#e6ffffff"
+                android:textStyle="bold"
+                tools:text="POORVA EXPRESS" />
+
+            <TextView
+                android:id="@+id/train_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@id/train_name"
+                android:text="(12303)"
+                android:textColor="#e6f7f4f4"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/arrival"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/train_name"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="40dp"
+                android:text="00:10"
+                android:textColor="#dc5b5fdf"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/avg_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/train_name"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@id/departure"
+                android:layout_toRightOf="@id/arrival"
+                android:gravity="center"
+                android:text="74km/hr"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/departure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/train_name"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="40dp"
+                android:layout_toLeftOf="@id/classes"
+                android:text="06:05"
+                android:textColor="#dc5b5fdf"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sstation"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrival"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="30dp"
+
+                android:text="CNB"
+                android:textColor="#252525"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/dstation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/arrival"
+                android:layout_marginRight="16dp"
+
+                android:layout_marginTop="30dp"
+
+                android:layout_toLeftOf="@id/classes"
+                android:text="NDLS"
+                android:textColor="#252525"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/distance_time"
+                android:layout_below="@id/avg_speed"
+                android:layout_toLeftOf="@id/dstation"
+                android:layout_toRightOf="@id/sstation"
+                android:adjustViewBounds="true"
+                android:foregroundGravity="center_horizontal"
+                android:src="@drawable/rightarrow" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_below="@id/dstation"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:background="#262728" />
+
+            <TextView
+                android:id="@+id/distance_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/arrival"
+                android:layout_marginTop="12dp"
+                android:layout_toLeftOf="@id/dstation"
+                android:layout_toRightOf="@id/sstation"
+                android:gravity="center|bottom"
+                android:text="439 KM / 05hr 55min"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/days"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sstation"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="30dp">
+
+
+                <TextView
+                    android:id="@+id/monday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mon"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tuesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tue"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/wednesday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Wed"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/thursday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Thu"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/friday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Fri"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/saturday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sat"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/sunday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sun"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/classes"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/dstation"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@id/days"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="center"
+
+                    android:text="1A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:text="2A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+
+                    android:gravity="center"
+                    android:text="3A" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="center"
+                    android:text="CC" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:gravity="center"
+                    android:text="SL" />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
