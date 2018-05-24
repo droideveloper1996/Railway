@@ -4,16 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#f7292929">
-
+    >
     <android.support.v7.widget.CardView
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:fadingEdgeLength="5dp"
-        app:cardBackgroundColor="#312929"
-        app:cardCornerRadius="8dp"
+        app:cardCornerRadius="14dp"
         app:cardElevation="8dp">
 
         <RelativeLayout
@@ -105,9 +102,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/arrival"
                 android:layout_marginRight="16dp"
-
                 android:layout_marginTop="30dp"
-
                 android:layout_toLeftOf="@id/classes"
                 android:text="NDLS"
                 android:textColor="#252525"

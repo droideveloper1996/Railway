@@ -85,7 +85,6 @@
                 android:layout_below="@id/train_name"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="50dp"
-
                 android:textColor="#252526"
                 android:textSize="24sp" />
 
@@ -98,7 +97,6 @@
                 android:layout_below="@id/train_name"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="50dp"
-
                 android:textColor="#252526"
                 android:textSize="24sp" />
 
@@ -147,7 +145,6 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="4dp"
-
                 android:textColor="#dc1425" />
 
             <TextView
@@ -160,7 +157,6 @@
                 android:layout_toLeftOf="@id/boarding_station"
                 android:layout_toRightOf="@id/date_of_journey"
                 android:gravity="center_horizontal"
-
                 android:textColor="#DC143C" />
 
             <LinearLayout
@@ -180,7 +176,6 @@
                     android:text="S No."
                     android:textColor="#323232"
                     android:textSize="15sp"
-
                     android:textStyle="bold" />
 
                 <TextView
@@ -222,7 +217,6 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-condensed"
                     android:textColor="#232323"
-
                     android:textSize="15sp" />
 
                 <TextView

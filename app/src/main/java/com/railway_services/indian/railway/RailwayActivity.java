@@ -1,18 +1,24 @@
 package com.railway_services.indian.railway;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -29,7 +35,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,21 +47,98 @@ public class RailwayActivity extends AppCompatActivity {
     public static final String REQUEST_URL = "https://raw.githubusercontent.com/datameet/railways/master/stations.json";
     ArrayList<String> stationarraylist;
     ArrayList<TbSClass> listOfTrainBetweenStation;
-
+    DatePickerDialog mDatePickerDialog;
+    TextView doj;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private InterstitialAd mInterstitialAd;
+    Calendar calender;
+    String date1 = "", year1 = "", month1 = "";
+
+    String today_date = "";
+    int date, month, year;
+    String[] myResArray;
+    FloatingActionButton fab;
+    AutoCompleteTextView sourceStationCodes;
+    AutoCompleteTextView destinationStationCodes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
         setContentView(R.layout.activity_railway);
+        myResArray = getResources().getStringArray(R.array.station_codes);
         progressBar = findViewById(R.id.progressBar);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
+
+        calender = Calendar.getInstance();
+        date = calender.get(Calendar.DATE);
+        fab=findViewById(R.id.fab);
+        month = calender.get(Calendar.MONTH) + 1;
+        year = calender.get(Calendar.YEAR);
+        doj = findViewById(R.id.doj);
+
+        String date2="",month2="";
+
+        if (date < 10) {
+            date2 = "0" + Integer.toString(date);
+        } else {
+            date2 = Integer.toString(date);
+        }
+        if (month< 10) {
+            month2 = "0" + Integer.toString(month);
+        } else {
+            month2 = Integer.toString(month);
+        }
+
+
+
+        //  Log.d("RailwayActivity", Integer.toString(date) + Integer.toString(month) + Integer.toString(year));
+        sourceStationCodes = findViewById(R.id.sourceStationCode);
+        destinationStationCodes = findViewById(R.id.destinationStationCode);
+        ArrayAdapter<String> stationCodes = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, myResArray);
+        sourceStationCodes.setAdapter(stationCodes);
+        destinationStationCodes.setAdapter(stationCodes);
+        doj.setText(date2+"-"+month2+"-"+Integer.toString(year));
+        //Toast.makeText(getApplicationContext(),today_date,Toast.LENGTH_LONG).show();
+        doj.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDatePickerDialog = new DatePickerDialog(RailwayActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int mon, int dat) {
+                        //   Log.d("RailwayActivity", Integer.toString(i) + Integer.toString(i1) + Integer.toString(i2));
+                        //    NetworkUtils networkUtils = new NetworkUtils(RailwayActivity.this);
+                        // String journeyDate = Integer.toString(i) + Integer.toString(i1) + Integer.toString(i2);
+                        mon+=1;
+                        if (dat < 10) {
+                            date1 = "0" + Integer.toString(dat);
+                        } else {
+                            date1 = Integer.toString(dat);
+                        }
+                        if (mon< 10) {
+                            month1 = "0" + Integer.toString(mon);
+                        } else {
+                            month1 = Integer.toString(mon);
+                        }
+
+                         today_date = date1 + "-" + month1 + "-" + year;
+
+                        doj.setText(today_date);
+                        // getTrainBetweenStations("CNB", "NDLS", "27-05-2018");
+
+                    }
+                }, year, month, date);
+                mDatePickerDialog.show();
+            }
+        });
+
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        NetworkUtils networkUtils = new NetworkUtils(this);
-        getTrainBetweenStations("CNB", "NDLS", "14-05-2018");
+
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-8002141505808441/6284654946");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
@@ -87,14 +173,15 @@ public class RailwayActivity extends AppCompatActivity {
             }
         });
 
-        Button btn = findViewById(R.id.pnrBtn);
-        btn.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(RailwayActivity.this, PnrActivity.class));
+                progressBar.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(),"Called TBS Method",Toast.LENGTH_LONG).show();
+                getTrainBetweenStations("CNB", "NDLS", doj.getText().toString());
+
             }
         });
-
     }
 
     void makeNetworkCall() {
@@ -146,7 +233,6 @@ public class RailwayActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
 
                         try {
 
@@ -249,8 +335,6 @@ public class RailwayActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slie_in_left, R.anim.slide_out_right);
 
     }
-
-
 
 
     void getLiveTrainStatus() {
