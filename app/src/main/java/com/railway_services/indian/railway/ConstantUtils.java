@@ -7,6 +7,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by Abhishek on 04-03-2018.
  */
@@ -14,7 +16,7 @@ import android.widget.Toast;
 public class ConstantUtils {
 
     Context mCtx;
-    public static final String API_KEY = "860z36j8dm";
+    public static final String API_KEY = "3h48itq4nb";
 
     private static String PNR_URL = "https://api.railwayapi.com/v2/pnr-status/pnr";
     private static String TRAIN_ROUTE = "https://api.railwayapi.com/v2/route/train";
@@ -24,6 +26,12 @@ public class ConstantUtils {
 
     private static String LIVE_TRAIN_STATUS = "https://api.railwayapi.com/v2/live/train";
     private static String FARE_ENQUIRY = "https://api.railwayapi.com/v2/fare/train";
+
+    private static String CANCELLED_TRAIN = "https://api.railwayapi.com/v2/cancelled";
+
+    private static String ARRIVAL_STATION = "https://api.railwayapi.com/v2/arrivals/station";
+
+    private static String RESCHEDULED_STRING = "https://api.railwayapi.com/v2/rescheduled/";
 
     ConstantUtils(Context mCtx) {
         this.mCtx = mCtx;
@@ -81,7 +89,7 @@ public class ConstantUtils {
 
     }
 
-    public static String builPnrurl(Context ctx,String pnr_number) {
+    public static String builPnrurl(Context ctx, String pnr_number) {
         String constructed_url = "";
         if (TextUtils.isEmpty(pnr_number)) {
             Toast.makeText(ctx, "Enter valid PNR number", Toast.LENGTH_LONG).show();
@@ -121,7 +129,7 @@ public class ConstantUtils {
     }
 
 
-    public  String trainsBetwenStaion(String sstaion, String dstation, String date) {
+    public String trainsBetwenStaion(String sstaion, String dstation, String date) {
         if (!TextUtils.isEmpty(sstaion) && !TextUtils.isEmpty(dstation) && !TextUtils.isEmpty(date)) {
             Uri uri = Uri.parse(TRAIN_BETWEN_STATION).buildUpon()
                     .appendPath(sstaion)
@@ -139,12 +147,38 @@ public class ConstantUtils {
 
     }
 
+    public String rescheduledTrains(String date) {
+        Uri uri=Uri.parse(RESCHEDULED_STRING).buildUpon().appendEncodedPath("date").appendPath(date)
+                .appendPath("apikey").appendPath(ConstantUtils.API_KEY).build();
+        return  uri.toString();
+    }
 
-    public static final String RESOPNSE_CODE="response_code";
-    public static final String TRAINS="trains";
-    public static final String DAYS="days";
-    public static final String CLASSES="classes";
-    public static final String TOTAL="total";
+    public static String getCancelledTrain(String date) {
+
+        if (!TextUtils.isEmpty(date)) {
+            Uri uri = Uri.parse(CANCELLED_TRAIN).buildUpon().appendEncodedPath("date").appendPath(date)
+                    .appendEncodedPath("apikey").appendPath(ConstantUtils.API_KEY).build();
+            Log.i("CancelledTrainUrl", uri.toString());
+
+            return uri.toString();
+
+        } else {
+            return null;
+        }
+    }
+
+    public static String getArrivalTrainsAtStation(String stationCode, String windowPeriod) {
+        Uri uri = Uri.parse(ARRIVAL_STATION).buildUpon().appendPath(stationCode).appendEncodedPath("hours").appendPath(windowPeriod).appendEncodedPath("apikey")
+                .appendPath(ConstantUtils.API_KEY).build();
+        return uri.toString();
+    }
+
+
+    public static final String RESOPNSE_CODE = "response_code";
+    public static final String TRAINS = "trains";
+    public static final String DAYS = "days";
+    public static final String CLASSES = "classes";
+    public static final String TOTAL = "total";
 
 
 }

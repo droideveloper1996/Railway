@@ -62,7 +62,7 @@ public class LiveTrainStatusActivity extends AppCompatActivity {
         //spinner = findViewById(R.id.stationSpinner);
        // ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, stationArray);
       //  spinner.setAdapter(arrayAdapter);
-        getLiveTrainStatsu("12033", "25-04-2018");
+        getLiveTrainStatsu("12033", "25-05-2018");
     }
 
 

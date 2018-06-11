@@ -16,7 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:background="@drawable/ticket_3">
+            android:background="@drawable/ticket_4">
 
             <TextView
                 android:id="@+id/train_name"

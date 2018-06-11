@@ -13,8 +13,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     Context mCtx;
     public static OnCategoryItemClick categoryItemClick;
 
-    int icon[] = {R.drawable.train_44, R.drawable.station, R.drawable.livetrain,R.drawable.seats};
-    String[] category = {"Find my Train", "Train Between Station", "Live Train","Seat Availability"};
+    int icon[] = {R.drawable.train_44, R.drawable.station, R.drawable.livetrain,
+            R.drawable.waiting_room,R.drawable.tickets,R.drawable.asking,
+            R.drawable.route,R.drawable.trainstation,R.drawable.schedule,
+            R.drawable.creditcard,R.drawable.speed,R.drawable.question};
+    String[] category = {"Find my Train", "Train Between Station", "Live Train","Seat Availability","Fare Enquiry","PNR Enquiry","Train Route","Train Arrivals","Rescheduled Train","Cancelled Train","Train Speed","FAQ"};
 
     public CategoryAdapter(Context mCtx, OnCategoryItemClick categoryItemClick) {
         this.categoryItemClick = categoryItemClick;

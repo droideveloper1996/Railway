@@ -51,6 +51,11 @@ public class HomeActivity extends AppCompatActivity implements CategoryAdapter.O
 
     @Override
     public void onClick(int position) {
-        startActivity(new Intent(this, RailwayActivity.class));
+        startActivity(new Intent(this, CancelledTrainActivity.class));
+    }
+
+    @Override
+    public void onBackPressed() {
+        //
     }
 }

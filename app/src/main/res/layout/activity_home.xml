@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
-    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_height="120dp"
+        android:background="@color/colorPrimary"
         android:elevation="16dp">
 
         <AutoCompleteTextView
@@ -18,17 +19,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="50dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="30dp"
             android:alpha=".97"
-            android:fontFamily="sans-serif-condensed"
             android:background="@drawable/search_bar"
-            android:drawableLeft="@android:drawable/ic_menu_search"
-            android:drawablePadding="8dp"
-            android:inputType="number"
-            android:drawableRight="@android:drawable/arrow_up_float"
+            android:drawableLeft="@drawable/magnifier"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/enterarrow"
+            android:fontFamily="sans-serif-condensed"
             android:hint="Check PNR"
+            android:inputType="number"
             android:maxLines="1"
-            android:padding="6dp"
+            android:maxLength="10"
+            android:padding="8dp"
             android:textSize="15sp" />
 
         <ImageView
@@ -50,11 +52,14 @@
 
     </RelativeLayout>
 
+
+
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
         android:id="@+id/category"
-        android:padding="16dp"
-        android:layout_height="match_parent"/>
+        android:layout_width="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_height="match_parent"
+        android:padding="12dp" />
 
 
 </LinearLayout>

@@ -27,7 +27,11 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".PnrActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".LiveTrainStatusActivity"></activity>
+        <activity android:name=".LiveTrainStatusActivity" />
+        <activity android:name=".SeatAvailActivity" />
+        <activity android:name=".CancelledTrainActivity" />
+        <activity android:name=".RescheduledTrainActivity" />
+        <activity android:name=".TrainArrivalActivity"></activity>
     </application>
 
 </manifest>

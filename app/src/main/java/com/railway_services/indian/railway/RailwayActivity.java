@@ -66,7 +66,7 @@ public class RailwayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-
+        listOfTrainBetweenStation=new ArrayList<>();
         setContentView(R.layout.activity_railway);
         myResArray = getResources().getStringArray(R.array.station_codes);
         progressBar = findViewById(R.id.progressBar);
@@ -177,7 +177,9 @@ public class RailwayActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(),"Called TBS Method",Toast.LENGTH_LONG).show();
+                listOfTrainBetweenStation.clear();
+
+                //Toast.makeText(getApplicationContext(),"Called TBS Method",Toast.LENGTH_LONG).show();
                 getTrainBetweenStations("CNB", "NDLS", doj.getText().toString());
 
             }

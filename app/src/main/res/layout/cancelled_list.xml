@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_margin="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/trainName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="ANVT-UHP EXPRESS SPL"
+                android:textColor="#f8f8f8" />
+
+            <TextView
+                android:id="@+id/trainNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="(04401)"
+                android:textColor="#f8f8f8" />
+
+        </LinearLayout>
+
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/sourcestationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLayout"
+            android:layout_marginLeft="4dp"
+            android:padding="4dp"
+            android:text="ANAND VIHAR TERMINAL"
+            android:textColor="#252525"
+            android:textStyle="bold"
+            tools:textColor="#252525" />
+
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/destinationstationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/linearLayout"
+            android:layout_marginRight="4dp"
+            android:layout_toRightOf="@id/sourcestationname"
+            android:gravity="right"
+            android:padding="4dp"
+            android:text="SH MATA V DEVI KATRA"
+            android:textColor="#252525"
+            android:textStyle="bold"
+            tools:textColor="#252525" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/sourcestationname"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/rightarrow" />
+
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/sourcestationcode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/arrow"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="ANVT"
+            android:textColor="#252525"
+            tools:textColor="#252525" />
+
+        <TextView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/destinationstationcode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/arrow"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="SVDK"
+            android:textColor="#252525"
+            tools:textColor="#252525" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sourcestationcode"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="22:20"
+            android:textStyle="bold"
+            android:textColor="#292929" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/destinationstationcode"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="HSP"
+            android:textColor="#292929" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
+
+
+
